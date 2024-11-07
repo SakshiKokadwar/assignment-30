@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+        .card {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card h2 {
+            margin: 15px 0;
+            font-size: 22px;
+        }
+        .card p {
+            color: #777;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .price {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #ff6f61;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .quantity input {
+            width: 40px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <img src="./wireless.avif" alt="Wireless Headphones">
+    <h2>Wireless Headphones</h2>
+    <p>High-quality sound with noise cancellation feature.</p>
+    <div class="price">Rs.1159/-+</div>
+    <div class="quantity">
+        <button onclick="decrement()">-</button>
+        <input type="text" id="quantity" value="1" readonly>
+        <button onclick="increment()">+</button>
+    </div>
+</div>
+
+<script>
+    let quantity = 1;
+
+    function increment() {
+        quantity++;
+        document.getElementById('quantity').value = quantity;
+    }
+
+    function decrement() {
+        if (quantity > 1) {
+            quantity--;
+            document.getElementById('quantity').value = quantity;
+        }
+    }
+</script>
+
+</body>
+</html>
